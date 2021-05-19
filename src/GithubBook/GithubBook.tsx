@@ -1,8 +1,8 @@
 import React from 'react'
 import { useGithubBook } from 'utils/hooks'
 import Search from './Search/Search'
-import UserInput from './Search/UserInput'
 import Sorter from './Results/Sorter'
+import UserInput from './Search/UserInput'
 import { Table, Pagination, Results } from './Results'
 
 import './GithubBook.css'
@@ -15,16 +15,20 @@ type Record = {
 
 const GithubBook = () => {
 	const {
+		// search
 		userInput,
 		setUserInput,
 		setQueryParam,
+		// status
 		data,
+		error,
 		isError,
 		isLoading,
 		isSuccess,
-		setFilter,
+		// sorting
 		sortOrder,
 		setSortOrder,
+		// pagination 
 		setPage,
 		setCurrentUsers,
 		setPageNumbers,
@@ -47,8 +51,7 @@ const GithubBook = () => {
 		setPage(parseInt(e.target.id))
 	}
 
-	const handleSort = (type: string, order: string) => {
-		setFilter(type)
+	const handleSort = (order: string) => {
 		setSortOrder(order)
 	}
 
@@ -58,10 +61,10 @@ const GithubBook = () => {
 				<Search>
 					<form className="form" onSubmit={handleSubmit}>
 						<UserInput value={userInput} setValue={setUserInput} />
-						<button className="btn" type="submit">search</button>
+						<button className="btn" type="submit" name="search">search</button>
 					</form>
 				</Search>
-				{isLoading && <div className="spinner" id="spinner" />}
+				{isLoading && <div className="spinner" data-testid="spinner" />}
 				{isSuccess && (
 					<Results>
 						<Sorter onSort={handleSort} sortOrder={sortOrder} />
@@ -69,7 +72,7 @@ const GithubBook = () => {
 						<Pagination pages={pageNumbers} onChangePage={handleChangePage} highlightIndex={page - 1} />
 					</Results>
 				)}
-				{isError && <div>Some error happened</div>}
+				{isError && <div className="error">{error.message}{'. '} {'Try again.'}</div>}
 			</div>
 	)
 }

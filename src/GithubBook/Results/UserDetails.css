@@ -84,6 +84,15 @@ svg:hover {
   margin: 0;
 }
 
+.error {
+	background: #fd4d4d;
+	color: white;
+	margin-top: 1em;
+	padding: 1em;
+	border-radius: 10px;
+	font-weight: 900;
+}
+
 @media(min-width: 600px) {
 	.details {
 		margin-top: 2em;

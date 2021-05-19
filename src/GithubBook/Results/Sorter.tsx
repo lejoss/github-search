@@ -12,10 +12,10 @@ const Sorter = ({ onSort, sortOrder }: { onSort: Function, sortOrder: any }) => 
 		<div className="sorter row">
 			<div className="img" />
 			{sortOrder === 'asc' && (
-				<span onClick={() => onSort('login', 'desc')}><ArrowUp /></span>
+				<span onClick={() => onSort('desc')}><ArrowUp /></span>
 			)}
 			{sortOrder === 'desc' && (
-				<span onClick={() => onSort('login', 'asc')}><ArrowDown /></span>
+				<span onClick={() => onSort('asc')}><ArrowDown /></span>
 			)}			
 			<p className="p item">Sort by Login</p>
 		</div>

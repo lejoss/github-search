@@ -103,7 +103,7 @@ function useGithubBook() {
 	const [queryParam, setQueryParam] = React.useState('')
 	const [userInput, setUserInput] = React.useState('')
 	const {setPage,setCurrentUsers,setPageNumbers, page } = usePagination()
-	const { run, data, isError, isLoading, isSuccess, reset, setData } = useAsync()
+	const { run, data, isError, isLoading, isSuccess, reset, setData, error } = useAsync()
 	const { filter, sortOrder, setFilter, setSortOrder, sortUsers } = useSorter()
 	const client = useClient()
 
@@ -128,6 +128,7 @@ function useGithubBook() {
 		setUserInput,
 		setQueryParam,
 		data: users,
+		error,
 		isSuccess,
 		isLoading,
 		isError,
