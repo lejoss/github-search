@@ -1,0 +1,33 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+.btn {
+	display: inline-block;
+	cursor: pointer;
+	text-transform: uppercase;
+	padding: 1em 3em;
+	color: white;
+	background: #fd4d4d;
+	border: 0 solid;
+	border-radius: 10px;
+	font-weight: 900;
+	outline: transparent;
+	margin-bottom: 1em;
+}
+
+.btn:hover {
+	opacity: 0.8;
+}
+
+@media(min-width: 600px) {
+	.form {
+		display: flex;
+		flex-direction: row;
+	}
+	.btn { margin: 0 }
+	h1 {
+		margin: 2em 0;
+	}
+}
