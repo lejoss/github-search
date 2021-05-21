@@ -14,11 +14,12 @@ const Pagination = ({
 	const renderPageNumbers = pages && pages.map((number, i) => {
 		return (
 			<li
+				data-testid="list-pagination"
 				className="li"
 				key={number}
 				id={number.toString()}
 				onClick={onChangePage}
-				style={{ color: highlightIndex === i ? 'white' : 'inherit' }}
+				style={{ color: highlightIndex === i ? 'white' : '#7A7E83' }}
 			>
 				{number}
 			</li>

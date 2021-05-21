@@ -59,7 +59,7 @@ const GithubBook = () => {
 			<div className="content">
 				<h1 className="title">Github Book</h1>
 				<Search>
-					<form className="form" onSubmit={handleSubmit}>
+					<form name="user-form" className="form" onSubmit={handleSubmit}>
 						<UserInput value={userInput} setValue={setUserInput} />
 						<button className="btn" type="submit" name="search">search</button>
 					</form>
